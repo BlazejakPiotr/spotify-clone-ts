@@ -13,12 +13,14 @@ const HomeNavbar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto"></Nav>
+          <Nav className="mx-auto"></Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link>
+            <Nav.Link href="#">Premium</Nav.Link>
+            <Nav.Link href="#">Support</Nav.Link>
+            <Nav.Link href="#">Download</Nav.Link>
+            <p style={{ padding: "28px 17px", marginBottom: "0px" }}>|</p>
+            <Nav.Link href="#">Sign up</Nav.Link>
+            <Nav.Link href="#">Log in</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -5,6 +5,8 @@ body {
 }
 
 .home-container {
+  display: flex;
+  align-items: center;
   background-color: #2941ab;
   color: #1ed760;
   min-height: 100vh;
@@ -26,16 +28,13 @@ button {
   font-size: 0.9rem !important;
 }
 
-.navbar-container {
-  padding: 0.75rem;
-}
-
 .spotify-logo {
   max-width: 132px;
 }
 
 .navbar-dark .navbar-nav .nav-link {
   color: #fff !important;
+  padding: 28px 17px !important;
 }
 
 .home-footer {
