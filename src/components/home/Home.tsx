@@ -18,7 +18,7 @@ const Home = () => {
               <p className="mb-5">
                 Milions of songs and podcasts. No credit card needed.
               </p>
-              <button>GET SPOTIFY FREE</button>
+              <button className="home-btn">GET SPOTIFY FREE</button>
             </Col>
           </Row>
         </Container>

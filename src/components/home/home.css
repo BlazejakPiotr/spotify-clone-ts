@@ -9,7 +9,7 @@ body {
   align-items: center;
   background-color: #2941ab;
   color: #1ed760;
-  min-height: 100vh;
+  min-height: 95vh;
 }
 
 h1 {
@@ -34,8 +34,15 @@ a {
 }
 
 a:hover,
+a:hover,
+.navbar-dark .navbar-nav .nav-link:hover,
 .social-icons-container button:hover {
   color: #1ed760 !important;
+}
+
+button.home-btn:hover {
+  background-color: #39e977;
+  border-radius: 15px;
 }
 
 .spotify-logo {
@@ -74,7 +81,7 @@ ul li {
   width: 56px;
   height: 56px;
   border-radius: 50% !important;
-  background-color: #3d3d3d;
+  background-color: #313131;
   color: #fff;
   font-size: 1.5rem !important;
 }
