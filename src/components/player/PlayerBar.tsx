@@ -1,5 +1,5 @@
 const PlayerBar = () => {
-  return;
+  return <div className="playerbar-container">Player</div>;
 };
 
 export default PlayerBar;

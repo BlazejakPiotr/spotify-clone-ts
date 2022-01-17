@@ -1,17 +1,52 @@
 .player-container {
-  min-height: 100vh;
-  position: relative;
+  min-height: calc(100vh - 90px);
+  display: flex;
   background-color: #303030;
 }
 
-.player-nav {
-  min-height: 100vh;
+.sidebar-wrapper.col {
+  padding: 0px;
+  max-width: 300px !important;
+}
+
+.sidebar-nav {
+  padding: 20px;
+  height: 100%;
   background-color: #000 !important;
+}
+
+.sidebar-nav button {
+  align-items: center;
+  display: flex;
+  height: 40px;
+  border: none;
+  background-color: #000;
+  color: #aaaaaa;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  gap: 16px;
+}
+
+.sidebar-nav button svg {
+  width: 24px;
+  height: 24px;
+  margin: 0px;
+  font-size: 1.5rem;
+}
+
+.sidebar-nav button:hover {
+  color: #fff;
+}
+
+.spotify-logo {
+  margin-bottom: 24px;
+  max-width: 131px;
 }
 
 .playerbar-container {
   height: 90px;
-  position: absolute;
-  bottom: 0;
+  position: sticky;
+  bottom: 90;
   background-color: #505050;
 }
