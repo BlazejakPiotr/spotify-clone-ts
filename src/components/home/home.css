@@ -28,6 +28,16 @@ button {
   font-size: 0.9rem !important;
 }
 
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+a:hover,
+.social-icons-container button:hover {
+  color: #1ed760 !important;
+}
+
 .spotify-logo {
   max-width: 132px;
 }
@@ -42,7 +52,7 @@ button {
 }
 
 .home-footer h6 {
-  margin-top: 20px;
+  margin: 20px 0px;
   font-size: 0.8rem;
   color: #a1a1a1;
 }
@@ -50,7 +60,7 @@ button {
 ul {
   display: flex;
   list-style-type: none;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #919496;
 }
 
@@ -58,6 +68,19 @@ ul li {
   margin-right: 24px;
 }
 
-.botttom-bar {
-  padding-inline-start: 0px !important;
+.social-icons-container button {
+  padding: 0px;
+  margin: 20px 0px 0px 15px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50% !important;
+  background-color: #3d3d3d;
+  color: #fff;
+  font-size: 1.5rem !important;
+}
+
+.bottom-bar p {
+  margin-bottom: 4px;
+  font-size: 0.7rem;
+  color: #919496;
 }
