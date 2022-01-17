@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+
+body {
+  text-align: center !important;
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  background-color: #2941ab;
+  color: #1ed760;
+  min-height: 95vh;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 7.8rem !important;
+  line-height: 1 !important;
+}
+
+button {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 32px !important;
+  background-color: #1ed760;
+  color: #2941ab;
+  font-weight: 500;
+  font-size: 0.9rem !important;
+}
+
+a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+a:hover,
+a:hover,
+.navbar-dark .navbar-nav .nav-link:hover,
+.social-icons-container button:hover {
+  color: #1ed760 !important;
+}
+
+button.home-btn:hover {
+  background-color: #39e977;
+  border-radius: 15px;
+}
+
+.spotify-logo {
+  max-width: 132px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  padding: 28px 17px !important;
+  color: #fff !important;
+}
+
+.home-footer {
+  padding: 80px 0px 50px 0px;
+}
+
+.home-footer h6 {
+  margin: 20px 0px;
+  font-size: 0.8rem;
+  color: #a1a1a1;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 0.7rem;
+  color: #919496;
+}
+
+ul li {
+  margin-right: 24px;
+}
+
+.social-icons-container button {
+  padding: 0px;
+  margin: 20px 0px 0px 15px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50% !important;
+  background-color: #313131;
+  color: #fff;
+  font-size: 1.5rem !important;
+}
+
+.bottom-bar p {
+  margin-bottom: 4px;
+  font-size: 0.7rem;
+  color: #919496;
+}
