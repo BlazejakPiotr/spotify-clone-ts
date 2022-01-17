@@ -1,0 +1,17 @@
+.player-container {
+  min-height: 100vh;
+  position: relative;
+  background-color: #303030;
+}
+
+.player-nav {
+  min-height: 100vh;
+  background-color: #000 !important;
+}
+
+.playerbar-container {
+  height: 90px;
+  position: absolute;
+  bottom: 0;
+  background-color: #505050;
+}
