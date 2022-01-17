@@ -1,0 +1,90 @@
+body {
+  background-color: #fff !important;
+  color: #000 !important;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 800;
+}
+.spotify-logo {
+  max-width: 182px;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 2rem;
+  margin-bottom: 12px;
+  border: 1px solid rgb(145, 145, 145);
+  border-radius: 32px !important;
+  color: rgb(231, 231, 231);
+  font-weight: 600;
+  font-size: 0.9rem !important;
+}
+
+button svg {
+  margin-right: 12px;
+  font-size: 1.25rem !important;
+}
+
+button:hover {
+  border: 1px solid rgb(0, 0, 0);
+}
+
+form div input[type="email"],
+input[type="password"] {
+  padding: 0.8rem !important;
+}
+
+form div input[type="email"]:hover,
+input[type="password"]:hover {
+  border: 1px solid black;
+}
+
+form div input[type="email"]:focus,
+input[type="password"]:focus {
+  border: 3px solid black !important;
+}
+
+form p a {
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+form p a:hover {
+  text-decoration: underline !important;
+}
+form div input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-right: 15px;
+}
+form div input[type="checkbox"]:hover {
+  border: 1px solid #1ed760;
+}
+
+form div input[type="checkbox"]:checked {
+  border: none;
+  background-color: #1ed760 !important;
+}
+
+.form-check label {
+  font-weight: 500;
+}
+
+button.login-btn {
+  padding: 0.75rem 2.2rem;
+  border: none;
+  border-radius: 32px !important;
+  background-color: #1ed760;
+  color: #000;
+  font-weight: 600;
+  font-size: 0.9rem !important;
+}
+
+button.login-btn:hover {
+  background-color: #39e977;
+  border-radius: 15px;
+}
