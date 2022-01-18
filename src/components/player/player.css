@@ -202,3 +202,16 @@ button:hover {
   color: #aaaaaa;
   font-size: 0.75rem;
 }
+
+.card-container-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-container-heading a {
+  color: #aaaaaa !important;
+}
+.card-container-heading a:hover {
+  text-decoration: underline !important;
+}

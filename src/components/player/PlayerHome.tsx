@@ -1,32 +1,13 @@
-import { Col, Container, Row } from "react-bootstrap";
-import PlayerCard from "./PlayerCard";
+import { Container, Row } from "react-bootstrap";
+
+import PlayerCardContainer from "./PlayerCardContainer";
 
 const PlayerHome = () => {
   return (
     <Container fluid>
-      <Row>
-        <Col>
-          <PlayerCard />
-        </Col>
-        <Col>
-          <PlayerCard />
-        </Col>
-        <Col>
-          <PlayerCard />
-        </Col>
-        <Col>
-          <PlayerCard />
-        </Col>
-        <Col>
-          <PlayerCard />
-        </Col>
-        <Col>
-          <PlayerCard />
-        </Col>
-        <Col>
-          <PlayerCard />
-        </Col>
-      </Row>
+      <PlayerCardContainer />
+      <PlayerCardContainer />
+      <PlayerCardContainer />
     </Container>
   );
 };
