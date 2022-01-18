@@ -3,6 +3,7 @@ import PlayerSidebar from "./PlayerSidebar";
 import "./player.css";
 import PlayerBar from "./PlayerBar";
 import PlayerTopNav from "./PlayerTopNav";
+import PlayerHome from "./PlayerHome";
 
 const PlayerApp = () => {
   return (
@@ -14,6 +15,7 @@ const PlayerApp = () => {
           </Col>
           <Col className="p-0">
             <PlayerTopNav />
+            <PlayerHome />
           </Col>
         </Row>
       </Container>
