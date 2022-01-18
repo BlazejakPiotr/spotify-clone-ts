@@ -1,5 +1,14 @@
+button {
+  border: none;
+  background-color: inherit;
+  color: #aaaaaa;
+}
+button:hover {
+  color: #fff;
+}
+
 .player-container {
-  min-height: calc(100vh - 90px);
+  min-height: calc(100vh - 91px);
   display: flex;
   background-color: #303030;
 }
@@ -19,9 +28,6 @@
   align-items: center;
   display: flex;
   height: 40px;
-  border: none;
-  background-color: #000;
-  color: #aaaaaa;
   text-align: left;
   font-size: 0.9rem;
   font-weight: 600;
@@ -35,10 +41,6 @@
   font-size: 1.5rem;
 }
 
-.sidebar-nav button:hover {
-  color: #fff;
-}
-
 .spotify-logo {
   margin-bottom: 24px;
   max-width: 131px;
@@ -46,7 +48,76 @@
 
 .playerbar-container {
   height: 90px;
-  position: sticky;
+  width: 100%;
+  position: absolute;
   bottom: 90;
+  display: flex;
+  align-items: center;
+  padding: 0px 16px;
+  background-color: #181818;
+  border-top: 1px solid #282828;
+}
+.playerbar-song {
+  display: flex;
+  width: 30%;
+  padding-right: 16px;
+}
+
+.playerbar-song img {
+  max-width: 56px;
+  max-height: 56px;
+}
+
+.playerbar-song h6,
+.playerbar-song p {
+  margin: 0px 16px;
+  font-size: 0.8rem;
+}
+
+.playerbar-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 16px;
+  width: 40%;
+}
+
+.playerbar-additonal-btn {
+  margin: 0px 8px;
+  display: flex;
+  align-items: center;
+  color: #505050;
+  font-size: 0.75rem;
+}
+
+.playerbar-progress-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playerbar-progress-bar div {
+  color: #aaaaaa !important;
+  font-size: 0.75rem;
+}
+
+.progress {
+  height: 3px;
   background-color: #505050;
+}
+
+.progress-bar {
+  background-color: #aaaaaa;
+}
+
+.progress-bar:hover {
+  background-color: #1ed760;
+}
+
+.player-bar-volume {
+  width: 30%;
+  display: flex;
+  justify-content: end;
 }
