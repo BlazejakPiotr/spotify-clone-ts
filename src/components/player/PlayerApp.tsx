@@ -4,6 +4,7 @@ import "./player.css";
 import PlayerBar from "./PlayerBar";
 import PlayerTopNav from "./PlayerTopNav";
 import PlayerHome from "./PlayerHome";
+import PlayerAlbum from "./PlayerAlbum";
 
 const PlayerApp = () => {
   return (
@@ -15,7 +16,8 @@ const PlayerApp = () => {
           </Col>
           <Col className="p-0">
             <PlayerTopNav />
-            <PlayerHome />
+            {/* <PlayerHome /> */}
+            <PlayerAlbum />
           </Col>
         </Row>
       </Container>

@@ -215,3 +215,37 @@ button:hover {
 .card-container-heading a:hover {
   text-decoration: underline !important;
 }
+
+.album-info {
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.album-info h1 {
+  margin-bottom: 24px;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 5rem;
+}
+
+.album-info img {
+  max-width: 24px;
+  max-height: 24px;
+  border-radius: 50%;
+}
+
+.album-info div h6 {
+  margin: 0px 8px;
+}
+
+.album-info div span {
+  color: #aaaaaa;
+  font-size: 0.9rem;
+}
+
+.album-pic {
+  max-width: 232px;
+  max-height: 232px;
+}
