@@ -58,9 +58,12 @@ const PlayerAlbum = () => {
         <SongItem />
         <SongItem />
       </div>
-      <div>
-        <PlayerCardContainer />
+      <div className="my-4 album-credits">
+        <p>© 2022 Asfalt Records</p>
+        <p>℗ 2022 Asfalt Records</p>
       </div>
+
+      <PlayerCardContainer />
     </Container>
   );
 };

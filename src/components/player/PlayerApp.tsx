@@ -19,7 +19,7 @@ const PlayerApp = () => {
           <Col className="sidebar-wrapper">
             <PlayerSidebar />
           </Col>
-          <Col className="p-0">
+          <Col className="p-0 content-wrapper">
             <div className=" player-container">
               <PlayerTopNav />
               {/* <PlayerHome /> */}
@@ -27,10 +27,12 @@ const PlayerApp = () => {
             </div>
 
             <footer>
-              <div className="footer-container row">
-                <FooterLinks />
-                <FooterSocials />
-                <FooterHorizontalLinks />
+              <div className="footer-container ">
+                <Row>
+                  <FooterLinks />
+                  <FooterSocials />
+                  <FooterHorizontalLinks />
+                </Row>
               </div>
             </footer>
           </Col>

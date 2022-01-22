@@ -101,10 +101,10 @@ export const FooterHorizontalLinks = () => {
             <a href="#">Legal</a>
           </li>
           <li>
-            <a href="#">lirivacy Center</a>
+            <a href="#">Privacy Center</a>
           </li>
           <li>
-            <a href="#">lirivacy liolicy</a>
+            <a href="#">Privacy policy</a>
           </li>
           <li>
             <a href="#">Cookies</a>

@@ -20,3 +20,7 @@ button {
 button:hover {
   color: #fff;
 }
+
+.spotify-logo {
+  max-width: 131px;
+}

@@ -1,9 +1,5 @@
-.spotify-logo {
-  margin-bottom: 24px;
-  max-width: 131px;
-}
-
 footer ul {
+  padding: 0px !important;
   display: flex;
   list-style-type: none;
   font-size: 0.7rem;
@@ -32,7 +28,7 @@ footer h6 {
 }
 
 footer a:hover,
-a:hover,
+footer a:hover,
 .navbar-dark .navbar-nav .nav-link:hover,
 .social-icons-container button:hover {
   color: #1ed760 !important;

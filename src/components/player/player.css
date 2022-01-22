@@ -1,5 +1,29 @@
 body {
   background-color: rgb(0, 0, 0) !important;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  overflow-y: scroll !important;
+  height: calc(100vh - 90px);
+}
+
+.content-wrapper::-webkit-scrollbar {
+  width: 12px;
+}
+
+.content-wrapper::-webkit-scrollbar-track {
+  background-color: #121212;
+}
+
+.content-wrapper::-webkit-scrollbar-thumb {
+  background-color: #4d4d4d;
+}
+.content-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #808080;
+}
+.content-wrapper::-webkit-scrollbar-thumb:active {
+  background-color: #aaaaaa;
 }
 
 .player-container {
@@ -10,6 +34,7 @@ body {
 .sidebar-wrapper.col {
   padding: 0px;
   max-width: 300px !important;
+  max-height: calc(100vh - 90px);
 }
 
 .sidebar-nav {
@@ -261,6 +286,7 @@ body {
 .album-songs h6 {
   margin-bottom: 0px;
   color: #fff;
+  font-weight: 400;
 }
 .album-songs p {
   margin-bottom: 0px;
@@ -278,6 +304,12 @@ body {
 
 .song-item:hover {
   background-color: #363636;
+}
+
+.album-credits > p {
+  margin-bottom: 0px;
+  color: #aaaaaa;
+  font-size: 0.7rem;
 }
 
 .footer-container {
