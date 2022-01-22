@@ -11,3 +11,16 @@ a {
   color: inherit !important;
   text-decoration: none !important;
 }
+
+button {
+  border: none;
+  background-color: inherit;
+  color: #aaaaaa;
+}
+button:hover {
+  color: #fff;
+}
+
+.spotify-logo {
+  max-width: 131px;
+}

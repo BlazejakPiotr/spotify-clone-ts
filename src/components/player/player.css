@@ -1,21 +1,42 @@
-button {
-  border: none;
-  background-color: inherit;
-  color: #aaaaaa;
+body {
+  background-color: rgb(0, 0, 0) !important;
+  overflow: hidden;
 }
-button:hover {
-  color: #fff;
+
+.content-wrapper {
+  overflow-y: scroll !important;
+  height: calc(100vh - 90px);
+  position: relative !important;
+}
+
+.content-wrapper::-webkit-scrollbar {
+  width: 12px;
+}
+
+.content-wrapper::-webkit-scrollbar-track {
+  background-color: #121212;
+}
+
+.content-wrapper::-webkit-scrollbar-thumb {
+  background-color: #4d4d4d;
+}
+.content-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #808080;
+}
+.content-wrapper::-webkit-scrollbar-thumb:active {
+  background-color: #aaaaaa;
 }
 
 .player-container {
-  min-height: calc(100vh - 91px);
-  display: flex;
-  background-color: #303030;
+  position: relative;
+  padding-bottom: 32px;
+  background: linear-gradient(180deg, #222222 0%, #121212 30%, #121212 100%);
 }
 
 .sidebar-wrapper.col {
   padding: 0px;
   max-width: 300px !important;
+  max-height: calc(100vh - 90px);
 }
 
 .sidebar-nav {
@@ -49,8 +70,8 @@ button:hover {
 .playerbar-container {
   height: 90px;
   width: 100%;
-  position: absolute;
-  bottom: 90;
+
+  bottom: 0;
   display: flex;
   align-items: center;
   padding: 0px 16px;
@@ -120,4 +141,242 @@ button:hover {
   width: 30%;
   display: flex;
   justify-content: end;
+}
+
+.top-navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 300px);
+}
+
+.top-left-nav button {
+  margin-right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #111111;
+}
+
+.top-left-nav button svg {
+  color: #aaaaaa;
+}
+
+.top-right-nav button {
+  margin-right: 24px;
+  padding: 0.5rem 2rem;
+  border: 1px solid #fff;
+  border-radius: 32px !important;
+  background-color: #0e0e0e;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.8rem !important;
+}
+
+#user-dropdown-btn {
+  all: initial;
+}
+
+#user-dropdown-btn * {
+  all: unset;
+}
+#user-dropdown-btn img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  border-radius: 50%;
+  border: 3px solid #2e2e2e;
+}
+#user-dropdown-btn {
+  display: flex;
+  align-items: center;
+  padding-right: 12px;
+  border: none;
+  border-radius: 32px !important;
+  background-color: #2e2e2e;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem !important;
+  cursor: pointer;
+}
+
+.card {
+  padding: 16px;
+  border-radius: 4px;
+  background-color: #181818;
+}
+
+.card:hover {
+  background-color: #313131;
+}
+
+.card img {
+  border-radius: 4px;
+}
+
+.card-title {
+  margin-top: 16px;
+  font-size: 0.9rem;
+}
+
+.card-text {
+  margin-bottom: 0.5rem;
+  color: #aaaaaa;
+  font-size: 0.75rem;
+}
+
+.card-container-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-container-heading a {
+  color: #aaaaaa !important;
+}
+.card-container-heading a:hover {
+  text-decoration: underline !important;
+}
+
+.album-info {
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.album-info h1 {
+  margin-bottom: 24px;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 5rem;
+}
+
+.album-info img {
+  max-width: 24px;
+  max-height: 24px;
+  border-radius: 50%;
+}
+
+.album-info div h6 {
+  margin: 0px 8px;
+}
+
+.album-info div span {
+  color: #aaaaaa;
+  font-size: 0.9rem;
+}
+
+.album-pic {
+  max-width: 232px;
+  max-height: 232px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .album-pic {
+    max-width: 192px;
+    max-height: 192px;
+  }
+}
+
+.album-songs {
+  margin-bottom: 80px;
+}
+
+.album-songs > div {
+  padding: 0px 16px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  color: #aaaaaa;
+}
+
+.album-songs h6 {
+  margin-bottom: 0px;
+  color: #fff;
+  font-weight: 400;
+}
+.album-songs p {
+  margin-bottom: 0px;
+  font-size: 0.8rem;
+}
+
+.album-songs > .song-item {
+  height: 56px;
+}
+
+.album-songs > div > div:last-child {
+  width: 20%;
+  text-align: end;
+}
+
+.song-item:hover {
+  background-color: #363636;
+}
+
+.album-credits > p {
+  margin-bottom: 0px;
+  color: #aaaaaa;
+  font-size: 0.7rem;
+}
+
+.artist-photo-container {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  text-align: center;
+}
+
+.artist-photo-gradient {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(34, 34, 34, 0) 43%,
+    rgba(18, 18, 18, 0.7091211484593838) 91%
+  );
+}
+
+.artist-photo-container > div:first-child {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  width: 100%;
+  height: 40vh;
+  text-align: center;
+}
+
+.artist-photo-container div {
+  padding: 50px 24px;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+}
+
+.artist-photo-container h1 {
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+.follow-btn {
+  padding: 0.25rem 1rem;
+  border: 1px solid rgba(192, 192, 192, 0.699);
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.follow-btn:hover {
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.footer-container {
+  padding: 80px 32px 50px 32px;
+  background-color: #000;
 }

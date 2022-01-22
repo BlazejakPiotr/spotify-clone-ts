@@ -1,5 +1,11 @@
 import { Col, Container, Row } from "react-bootstrap";
-import HomeFooter from "./HomeFooter";
+import {
+  FooterHorizontalLinks,
+  FooterLinks,
+  FooterLogo,
+  FooterSocials,
+} from "../footer/Footer";
+
 import HomeNavbar from "./HomeNabar";
 import "./home.css";
 
@@ -23,9 +29,16 @@ const Home = () => {
           </Row>
         </Container>
       </div>
-      <div className="home-footer">
-        <HomeFooter />
-      </div>
+      <footer>
+        <Container className="home-footer">
+          <Row className="text-start mb-5">
+            <FooterLogo />
+            <FooterLinks />
+            <FooterSocials />
+            <FooterHorizontalLinks />
+          </Row>
+        </Container>
+      </footer>
     </>
   );
 };
