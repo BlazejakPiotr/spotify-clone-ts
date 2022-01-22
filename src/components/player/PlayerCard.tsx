@@ -1,8 +1,9 @@
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const PlayerCard = () => {
   return (
-    <a href="#">
+    <Link to="artist/213">
       <Card>
         <Card.Img
           variant="top"
@@ -13,7 +14,7 @@ const PlayerCard = () => {
           <Card.Text>O.S.T.R.</Card.Text>
         </Card.Body>
       </Card>
-    </a>
+    </Link>
   );
 };
 

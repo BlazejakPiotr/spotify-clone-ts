@@ -5,7 +5,7 @@ import {
   faPlayCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import PlayerCardContainer from "./PlayerCardContainer";
 
 const PlayerAlbum = () => {

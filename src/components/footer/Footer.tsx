@@ -45,7 +45,6 @@ export const FooterLinks = () => {
     <>
       <Col md={12} lg={2}>
         <h6>COMPANY</h6>
-
         <p>
           <a href="#">About</a>
         </p>
@@ -63,29 +62,29 @@ export const FooterLinks = () => {
           <a href="#">For Artists</a>
         </p>
         <p>
-          <a href="#">Developers</a>
+          <a href="/">Developers</a>
         </p>
         <p>
-          <a href="#">Advertising</a>
+          <a href="/">Advertising</a>
         </p>
         <p>
-          <a href="#">Investors</a>
+          <a href="/">Investors</a>
         </p>
         <p>
-          <a href="#">Vendors</a>
+          <a href="/">Vendors</a>
         </p>
       </Col>
       <Col md={12} lg={2}>
         <h6>USEFUL LINKS</h6>
 
         <p>
-          <a href="#">Support</a>
+          <a href="/">Support</a>
         </p>
         <p>
-          <a href="#">Web Player</a>
+          <a href="/">Web Player</a>
         </p>
         <p>
-          <a href="#">Free Mobile App</a>
+          <a href="/">Free Mobile App</a>
         </p>
       </Col>
     </>
@@ -98,25 +97,25 @@ export const FooterHorizontalLinks = () => {
       <Col md={12} lg={6} className=" d-flex align-items-end mt-5">
         <ul className="bottom-bar">
           <li>
-            <a href="#">Legal</a>
+            <a href="/">Legal</a>
           </li>
           <li>
-            <a href="#">Privacy Center</a>
+            <a href="/">Privacy Center</a>
           </li>
           <li>
-            <a href="#">Privacy policy</a>
+            <a href="/">Privacy policy</a>
           </li>
           <li>
-            <a href="#">Cookies</a>
+            <a href="/">Cookies</a>
           </li>
           <li>
-            <a href="#">About Ads</a>
+            <a href="/">About Ads</a>
           </li>
         </ul>
       </Col>
       <Col md={12} lg={6} className="bottom-bar text-end mt-5">
         <p>
-          <a style={{ cursor: "pointer" }}>
+          <a href="/" style={{ cursor: "pointer" }}>
             <FontAwesomeIcon
               icon={faGlobeAmericas}
               style={{ marginRight: "6px" }}

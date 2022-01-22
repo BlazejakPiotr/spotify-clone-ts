@@ -1,6 +1,6 @@
 body {
   background-color: rgb(0, 0, 0) !important;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .content-wrapper {
@@ -63,7 +63,6 @@ body {
 }
 
 .spotify-logo {
-  margin-bottom: 24px;
   max-width: 131px;
 }
 
@@ -140,7 +139,7 @@ body {
 .player-bar-volume {
   width: 30%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .top-navbar {
@@ -243,7 +242,7 @@ body {
   margin-left: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .album-info h1 {

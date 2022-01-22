@@ -8,9 +8,9 @@ const PlayerHome = () => {
       <Row className="pt-4">
         <Col>test</Col>
       </Row>
-      <PlayerCardContainer />
-      <PlayerCardContainer />
-      <PlayerCardContainer />
+      <PlayerCardContainer title="Recently Played" />
+      <PlayerCardContainer title="Popular Artists" />
+      <PlayerCardContainer title="Popular Albums" />
     </Container>
   );
 };

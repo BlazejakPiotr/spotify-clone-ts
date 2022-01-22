@@ -1,15 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 
-body {
-  text-align: center !important;
-}
-
 .home-container {
   display: flex;
   align-items: center;
   background-color: #2941ab;
   color: #1ed760;
   min-height: 95vh;
+  text-align: center;
 }
 
 .home-container h1 {

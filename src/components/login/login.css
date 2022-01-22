@@ -1,16 +1,18 @@
-body {
+.login {
+  min-height: 100vh;
   background-color: #fff !important;
-  color: #000 !important;
+  color: #000;
   font-family: "Montserrat", sans-serif;
   font-size: 0.8rem;
   text-align: center;
   font-weight: 800;
 }
-.spotify-logo {
+
+.login .spotify-logo {
   max-width: 182px;
 }
 
-button {
+.login button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,54 +25,54 @@ button {
   font-size: 0.9rem !important;
 }
 
-button svg {
+.login button svg {
   margin-right: 12px;
   font-size: 1.25rem !important;
 }
 
-button:hover {
+.login button:hover {
   border: 1px solid rgb(0, 0, 0);
 }
 
-form div input[type="email"],
-input[type="password"] {
+.login form div input[type="email"],
+.login input[type="password"] {
   padding: 0.8rem !important;
 }
 
-form div input[type="email"]:hover,
-input[type="password"]:hover {
+.login form div input[type="email"]:hover,
+.login input[type="password"]:hover {
   border: 1px solid black;
 }
 
-form div input[type="email"]:focus,
-input[type="password"]:focus {
+.login form div input[type="email"]:focus,
+.login input[type="password"]:focus {
   border: 3px solid black !important;
 }
 
-form p a {
+.login form p a {
   color: #000;
   font-size: 0.9rem;
   font-weight: 500;
 }
 
-form p a:hover {
+.login form p a:hover {
   text-decoration: underline !important;
 }
-form div input[type="checkbox"] {
+.login form div input[type="checkbox"] {
   width: 16px;
   height: 16px;
   margin-right: 15px;
 }
-form div input[type="checkbox"]:hover {
+.login form div input[type="checkbox"]:hover {
   border: 1px solid #1ed760;
 }
 
-form div input[type="checkbox"]:checked {
+.login form div input[type="checkbox"]:checked {
   border: none;
   background-color: #1ed760 !important;
 }
 
-.form-check label {
+.login .form-check label {
   font-weight: 500;
 }
 

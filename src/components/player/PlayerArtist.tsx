@@ -1,10 +1,5 @@
-import { Col, Container, Row } from "react-bootstrap";
-import {
-  faClock,
-  faEllipsisH,
-  faHeart,
-  faPlayCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import { Col, Container } from "react-bootstrap";
+import { faEllipsisH, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SongItem } from "./PlayerAlbum";
 import PlayerCardContainer from "./PlayerCardContainer";

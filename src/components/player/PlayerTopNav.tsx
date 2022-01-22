@@ -1,11 +1,9 @@
 import {
-  faChevronCircleLeft,
-  faChevronCircleRight,
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Container, Dropdown, DropdownButton, Navbar } from "react-bootstrap";
+import { Container, Dropdown, Navbar } from "react-bootstrap";
 
 const PlayerTopNav = () => {
   return (
