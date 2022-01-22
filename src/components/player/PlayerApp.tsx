@@ -5,19 +5,23 @@ import PlayerBar from "./PlayerBar";
 import PlayerTopNav from "./PlayerTopNav";
 import PlayerHome from "./PlayerHome";
 import PlayerAlbum from "./PlayerAlbum";
+import PlayerFooter from "./PlayerFooter";
 
 const PlayerApp = () => {
   return (
     <>
       <Container fluid>
-        <Row className="player-container d-flex">
+        <Row className=" d-flex">
           <Col className="sidebar-wrapper">
             <PlayerSidebar />
           </Col>
           <Col className="p-0">
-            <PlayerTopNav />
-            {/* <PlayerHome /> */}
-            <PlayerAlbum />
+            <div className=" player-container">
+              <PlayerTopNav />
+              {/* <PlayerHome /> */}
+              <PlayerAlbum />
+            </div>
+            <PlayerFooter />
           </Col>
         </Row>
       </Container>

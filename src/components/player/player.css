@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(0, 0, 0) !important;
+}
+
 button {
   border: none;
   background-color: inherit;
@@ -8,15 +12,8 @@ button:hover {
 }
 
 .player-container {
-  min-height: calc(100vh - 91px);
-  display: flex;
-  background: rgb(34, 34, 34);
-  background: linear-gradient(
-    180deg,
-    rgba(34, 34, 34, 1) 0%,
-    rgba(18, 18, 18, 1) 30%,
-    rgba(18, 18, 18, 1) 100%
-  );
+  padding-bottom: 32px;
+  background: linear-gradient(180deg, #222222 0%, #121212 30%, #121212 100%);
 }
 
 .sidebar-wrapper.col {
@@ -218,6 +215,7 @@ button:hover {
 
 .album-info {
   margin-left: 24px;
+
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -248,4 +246,73 @@ button:hover {
 .album-pic {
   max-width: 232px;
   max-height: 232px;
+}
+
+@media only screen and (max-width: 1280px) {
+  .album-pic {
+    max-width: 192px;
+    max-height: 192px;
+  }
+}
+
+.album-controls {
+}
+
+.album-songs > div {
+  padding: 0px 16px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  color: #aaaaaa;
+}
+
+.album-songs h6 {
+  margin-bottom: 0px;
+  color: #fff;
+}
+.album-songs p {
+  margin-bottom: 0px;
+  font-size: 0.8rem;
+}
+
+.album-songs > .song-item {
+  height: 56px;
+}
+
+.album-songs > div > div:last-child {
+  width: 20%;
+  text-align: end;
+}
+
+.player-footer {
+  padding: 80px 0px 50px 0px;
+  background-color: #000;
+}
+
+.player-footer h6 {
+  margin: 20px 0px;
+  font-size: 0.8rem;
+  color: #a1a1a1;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  font-size: 0.7rem;
+  color: #919496;
+}
+
+ul li {
+  margin-right: 24px;
+}
+
+.social-icons-container button {
+  padding: 0px;
+  margin: 20px 0px 0px 15px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50% !important;
+  background-color: #313131;
+  color: #fff;
+  font-size: 1.5rem !important;
 }

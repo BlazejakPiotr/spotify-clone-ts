@@ -3,7 +3,7 @@ import PlayerCard from "./PlayerCard";
 
 const PlayerCardContainer = () => {
   return (
-    <Row className="mb-5">
+    <Row className="mt-5">
       <div className="card-container-heading mb-3">
         <h4 style={{ margin: "0px" }}>Section title</h4>
         <a href="#">SEE ALL</a>

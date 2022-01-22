@@ -1,9 +1,17 @@
+import {
+  faClock,
+  faEllipsisH,
+  faHeart,
+  faPlayCircle,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Container, Row } from "react-bootstrap";
+import PlayerCardContainer from "./PlayerCardContainer";
 
 const PlayerAlbum = () => {
   return (
     <Container fluid>
-      <div className="mt-5 d-flex">
+      <div className="mt-5 mb-3 d-flex">
         <div>
           <img
             src="https://i.scdn.co/image/ab67616d0000b27340135d559b698bf8555c7c03"
@@ -25,8 +33,48 @@ const PlayerAlbum = () => {
           </div>
         </div>
       </div>
+      <div className="py-3 d-flex align-items-center">
+        <FontAwesomeIcon icon={faPlayCircle} size="4x" color="#1DB954" />
+        <FontAwesomeIcon
+          icon={faHeart}
+          size="2x"
+          color="#aaaaaa"
+          className="mx-4"
+        />
+        <FontAwesomeIcon icon={faEllipsisH} size="2x" color="#aaaaaa" />
+      </div>
+      <div className="album-songs">
+        <div>
+          <div>#</div>
+          <div className="w-75">TITLE</div>
+          <div>
+            <FontAwesomeIcon icon={faClock} />
+          </div>
+        </div>
+        <hr className="my-3" />
+        <SongItem />
+        <SongItem />
+        <SongItem />
+        <SongItem />
+        <SongItem />
+      </div>
+      <div className="mt-5"></div>
+      <PlayerCardContainer />
     </Container>
   );
 };
 
 export default PlayerAlbum;
+
+const SongItem = () => {
+  return (
+    <div className="song-item">
+      <div>1</div>
+      <div className="w-75">
+        <h6>Preambuła</h6>
+        <p>O.S.T.R.</p>
+      </div>
+      <div>2:21</div>
+    </div>
+  );
+};
