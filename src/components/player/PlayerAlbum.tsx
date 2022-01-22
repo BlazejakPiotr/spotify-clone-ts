@@ -10,9 +10,9 @@ import PlayerCardContainer from "./PlayerCardContainer";
 
 const PlayerAlbum = () => {
   return (
-    <Container fluid>
-      <div className="mt-5 mb-3 d-flex">
-        <div>
+    <Container fluid className="pt-5">
+      <div className="mb-3 d-flex">
+        <div className="mt-5">
           <img
             src="https://i.scdn.co/image/ab67616d0000b27340135d559b698bf8555c7c03"
             alt="album-pic"
@@ -39,7 +39,7 @@ const PlayerAlbum = () => {
           icon={faHeart}
           size="2x"
           color="#aaaaaa"
-          className="mx-4"
+          className="mx-5"
         />
         <FontAwesomeIcon icon={faEllipsisH} size="2x" color="#aaaaaa" />
       </div>
@@ -70,7 +70,7 @@ const PlayerAlbum = () => {
 
 export default PlayerAlbum;
 
-const SongItem = () => {
+export const SongItem = () => {
   return (
     <div className="song-item">
       <div>1</div>

@@ -9,7 +9,7 @@ import { Container, Dropdown, DropdownButton, Navbar } from "react-bootstrap";
 
 const PlayerTopNav = () => {
   return (
-    <Navbar sticky="top">
+    <Navbar sticky="top" className="top-navbar">
       <Container fluid>
         <div className="top-left-nav">
           <button>

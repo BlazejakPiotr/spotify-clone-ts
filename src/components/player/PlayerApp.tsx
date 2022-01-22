@@ -10,6 +10,7 @@ import {
   FooterLinks,
   FooterSocials,
 } from "../footer/Footer";
+import PlayerArtist from "./PlayerArtist";
 
 const PlayerApp = () => {
   return (
@@ -20,10 +21,11 @@ const PlayerApp = () => {
             <PlayerSidebar />
           </Col>
           <Col className="p-0 content-wrapper">
+            <PlayerTopNav />
             <div className=" player-container">
-              <PlayerTopNav />
               {/* <PlayerHome /> */}
-              <PlayerAlbum />
+              {/* <PlayerAlbum /> */}
+              <PlayerArtist />
             </div>
 
             <footer>

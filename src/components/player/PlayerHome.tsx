@@ -4,8 +4,8 @@ import PlayerCardContainer from "./PlayerCardContainer";
 
 const PlayerHome = () => {
   return (
-    <Container fluid>
-      <Row>
+    <Container fluid className="pt-5">
+      <Row className="pt-4">
         <Col>test</Col>
       </Row>
       <PlayerCardContainer />

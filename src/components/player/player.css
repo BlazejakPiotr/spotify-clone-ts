@@ -6,6 +6,7 @@ body {
 .content-wrapper {
   overflow-y: scroll !important;
   height: calc(100vh - 90px);
+  position: relative !important;
 }
 
 .content-wrapper::-webkit-scrollbar {
@@ -27,6 +28,7 @@ body {
 }
 
 .player-container {
+  position: relative;
   padding-bottom: 32px;
   background: linear-gradient(180deg, #222222 0%, #121212 30%, #121212 100%);
 }
@@ -68,7 +70,7 @@ body {
 .playerbar-container {
   height: 90px;
   width: 100%;
-  position: sticky;
+
   bottom: 0;
   display: flex;
   align-items: center;
@@ -140,6 +142,14 @@ body {
   display: flex;
   justify-content: end;
 }
+
+.top-navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 300px);
+}
+
 .top-left-nav button {
   margin-right: 16px;
   width: 36px;
@@ -231,7 +241,6 @@ body {
 
 .album-info {
   margin-left: 24px;
-
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -310,6 +319,61 @@ body {
   margin-bottom: 0px;
   color: #aaaaaa;
   font-size: 0.7rem;
+}
+
+.artist-photo-container {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  text-align: center;
+}
+
+.artist-photo-gradient {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(34, 34, 34, 0) 43%,
+    rgba(18, 18, 18, 0.7091211484593838) 91%
+  );
+}
+
+.artist-photo-container > div:first-child {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: center;
+  width: 100%;
+  height: 40vh;
+  text-align: center;
+}
+
+.artist-photo-container div {
+  padding: 50px 24px;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+}
+
+.artist-photo-container h1 {
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+.follow-btn {
+  padding: 0.25rem 1rem;
+  border: 1px solid rgba(192, 192, 192, 0.699);
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.follow-btn:hover {
+  border: 1px solid rgb(255, 255, 255);
 }
 
 .footer-container {
