@@ -2,15 +2,6 @@ body {
   background-color: rgb(0, 0, 0) !important;
 }
 
-button {
-  border: none;
-  background-color: inherit;
-  color: #aaaaaa;
-}
-button:hover {
-  color: #fff;
-}
-
 .player-container {
   padding-bottom: 32px;
   background: linear-gradient(180deg, #222222 0%, #121212 30%, #121212 100%);
@@ -255,7 +246,8 @@ button:hover {
   }
 }
 
-.album-controls {
+.album-songs {
+  margin-bottom: 80px;
 }
 
 .album-songs > div {
@@ -284,35 +276,11 @@ button:hover {
   text-align: end;
 }
 
-.player-footer {
-  padding: 80px 0px 50px 0px;
+.song-item:hover {
+  background-color: #363636;
+}
+
+.footer-container {
+  padding: 80px 32px 50px 32px;
   background-color: #000;
-}
-
-.player-footer h6 {
-  margin: 20px 0px;
-  font-size: 0.8rem;
-  color: #a1a1a1;
-}
-
-ul {
-  display: flex;
-  list-style-type: none;
-  font-size: 0.7rem;
-  color: #919496;
-}
-
-ul li {
-  margin-right: 24px;
-}
-
-.social-icons-container button {
-  padding: 0px;
-  margin: 20px 0px 0px 15px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50% !important;
-  background-color: #313131;
-  color: #fff;
-  font-size: 1.5rem !important;
 }

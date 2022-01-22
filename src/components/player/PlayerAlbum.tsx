@@ -43,7 +43,7 @@ const PlayerAlbum = () => {
         />
         <FontAwesomeIcon icon={faEllipsisH} size="2x" color="#aaaaaa" />
       </div>
-      <div className="album-songs">
+      <div className="album-songs mb-5">
         <div>
           <div>#</div>
           <div className="w-75">TITLE</div>
@@ -58,8 +58,9 @@ const PlayerAlbum = () => {
         <SongItem />
         <SongItem />
       </div>
-      <div className="mt-5"></div>
-      <PlayerCardContainer />
+      <div>
+        <PlayerCardContainer />
+      </div>
     </Container>
   );
 };

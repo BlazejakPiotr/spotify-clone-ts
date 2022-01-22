@@ -5,7 +5,11 @@ import PlayerBar from "./PlayerBar";
 import PlayerTopNav from "./PlayerTopNav";
 import PlayerHome from "./PlayerHome";
 import PlayerAlbum from "./PlayerAlbum";
-import PlayerFooter from "./PlayerFooter";
+import {
+  FooterHorizontalLinks,
+  FooterLinks,
+  FooterSocials,
+} from "../footer/Footer";
 
 const PlayerApp = () => {
   return (
@@ -21,7 +25,14 @@ const PlayerApp = () => {
               {/* <PlayerHome /> */}
               <PlayerAlbum />
             </div>
-            <PlayerFooter />
+
+            <footer>
+              <div className="footer-container row">
+                <FooterLinks />
+                <FooterSocials />
+                <FooterHorizontalLinks />
+              </div>
+            </footer>
           </Col>
         </Row>
       </Container>
