@@ -8,7 +8,9 @@ const composeEnhancers =
 
 export const initialState = {
   player: {
-    data: [],
+    data: {
+      radios: [],
+    },
     error: false,
     loading: false,
   },
@@ -25,4 +27,5 @@ const configureStore = () =>
     composeEnhancers(applyMiddleware(thunk))
   );
 
+export type AppState = ReturnType<typeof bigReducer>;
 export default configureStore;

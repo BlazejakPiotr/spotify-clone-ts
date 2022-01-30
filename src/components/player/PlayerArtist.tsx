@@ -2,7 +2,6 @@ import { Col, Container } from "react-bootstrap";
 import { faEllipsisH, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { SongItem } from "./PlayerAlbum";
-import PlayerCardContainer from "./PlayerCardContainer";
 
 const PlayerArtist = () => {
   return (
@@ -36,9 +35,6 @@ const PlayerArtist = () => {
             <SongItem />
           </div>
         </Col>
-        <PlayerCardContainer />
-        <PlayerCardContainer />
-        <PlayerCardContainer />
       </div>
     </Container>
   );

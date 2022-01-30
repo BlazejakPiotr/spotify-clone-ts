@@ -12,37 +12,8 @@ import {
 } from "../footer/Footer";
 import PlayerArtist from "./PlayerArtist";
 import { Route, Routes } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { Artist } from "../../types/Artist";
-import { Album } from "../../types/Album";
-
-const apiKey: string = process.env.REACT_APP_apiKey as string;
-const apiHost: string = process.env.REACT_APP_apiHost as string;
-const endpointsArr: string[] = ["album/", "artist/", "genere/", "radio/"];
 
 const PlayerApp = () => {
-  const fetchData = async () => {
-    try {
-      let response = await fetch(
-        "https://deezerdevs-deezer.p.rapidapi.com/radio/top",
-        {
-          method: "GET",
-          headers: { "x-rapidapi-host": apiHost, "x-rapidapi-key": apiKey },
-        }
-      );
-      if (response.ok) {
-        const responseData: Album[] = await response.json();
-        console.log(responseData);
-      } else {
-        console.log("Something went wrong");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
     <>
       <Container fluid>

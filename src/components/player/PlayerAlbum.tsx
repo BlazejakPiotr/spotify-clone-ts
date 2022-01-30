@@ -6,7 +6,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Container } from "react-bootstrap";
-import PlayerCardContainer from "./PlayerCardContainer";
 
 const PlayerAlbum = () => {
   return (
@@ -63,7 +62,7 @@ const PlayerAlbum = () => {
         <p>℗ 2022 Asfalt Records</p>
       </div>
 
-      <PlayerCardContainer />
+      {/* <PlayerCardContainer /> */}
     </Container>
   );
 };
