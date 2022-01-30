@@ -3,13 +3,14 @@ import PlayerCard from "./PlayerCard";
 
 interface PlayerCardContainerProps {
   title?: string;
+  related?: object;
 }
 
-const PlayerCardContainer = ({ title }: PlayerCardContainerProps) => {
+const PlayerCardContainer = (related: PlayerCardContainerProps) => {
   return (
     <Row className="mt-5">
       <div className="card-container-heading mb-3">
-        <h4 style={{ margin: "0px" }}>{title}</h4>
+        <h4 style={{ margin: "0px" }}></h4>
         <a href="#">SEE ALL</a>
       </div>
       <Col>

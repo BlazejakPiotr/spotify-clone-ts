@@ -1,4 +1,4 @@
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import PlayerSidebar from "./PlayerSidebar";
 import "./player.css";
 import PlayerBar from "./PlayerBar";
@@ -12,29 +12,37 @@ import {
 } from "../footer/Footer";
 import PlayerArtist from "./PlayerArtist";
 import { Route, Routes } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Artist } from "../../types/Artist";
+import { Album } from "../../types/Album";
 
-const api = "https://deezerdevs-deezer.p.rapidapi.com/";
 const apiKey: string = process.env.REACT_APP_apiKey as string;
 const apiHost: string = process.env.REACT_APP_apiHost as string;
+const endpointsArr: string[] = ["album/", "artist/", "genere/", "radio/"];
 
 const PlayerApp = () => {
-  useEffect(() => {
-    const fetchGenere = async () => {
-      try {
-        let response = await fetch(api + "genre/reggae/artists", {
+  const fetchData = async () => {
+    try {
+      let response = await fetch(
+        "https://deezerdevs-deezer.p.rapidapi.com/radio/top",
+        {
           method: "GET",
           headers: { "x-rapidapi-host": apiHost, "x-rapidapi-key": apiKey },
-        });
-        if (response.ok) {
-          let fetchedRadios = await response.json();
-          console.log(fetchedRadios);
         }
-      } catch (error) {}
-    };
-    fetchGenere();
+      );
+      if (response.ok) {
+        const responseData: Album[] = await response.json();
+        console.log(responseData);
+      } else {
+        console.log("Something went wrong");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
   }, []);
-
   return (
     <>
       <Container fluid>
