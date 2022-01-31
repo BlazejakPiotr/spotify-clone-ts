@@ -9,7 +9,10 @@ const composeEnhancers =
 export const initialState = {
   player: {
     data: {
+      artist: {},
       radios: [],
+      related: [],
+      tracklist: [],
     },
     error: false,
     loading: false,

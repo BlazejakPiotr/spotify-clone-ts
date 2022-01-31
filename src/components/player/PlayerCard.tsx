@@ -1,18 +1,20 @@
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Radio } from "../../types/Radio";
+import { Artist } from "../../types/Artist";
 
 interface PlayerCardProps {
-  data: Radio;
+  data: Radio | Artist;
+  name: string;
 }
-const PlayerCard = ({ data }: PlayerCardProps) => {
+const PlayerCard = ({ data, name }: PlayerCardProps) => {
   return (
-    <Link to={`album/${data.id}`}>
+    <Link to={`${data.type}/${data.id}`}>
       <Card>
         <Card.Img variant="top" src={data.picture_medium} />
         <Card.Body className="p-0">
-          <Card.Title>{data.title}</Card.Title>
-          <Card.Text></Card.Text>
+          <Card.Title>{name}</Card.Title>
+          <Card.Text>{data.type}</Card.Text>
         </Card.Body>
       </Card>
     </Link>

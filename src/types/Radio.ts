@@ -6,7 +6,7 @@ export interface Radio {
   picture_medium: string;
   picture_small: string;
   picture_xl: string;
-  title: string;
+  title?: string;
   tracklist: string;
   type: string;
 }

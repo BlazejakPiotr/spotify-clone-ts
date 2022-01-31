@@ -28,6 +28,7 @@ const PlayerApp = () => {
                 <Route path="/" element={<PlayerHome />} />
                 <Route path="album/:albumID" element={<PlayerAlbum />} />
                 <Route path="artist/:artistID" element={<PlayerArtist />} />
+                <Route path="radio/:radioID" element={<PlayerAlbum />} />
               </Routes>
             </div>
 
