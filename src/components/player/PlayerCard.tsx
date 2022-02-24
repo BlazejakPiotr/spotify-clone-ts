@@ -1,19 +1,28 @@
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { Radio } from "../../types/Radio";
+import { Artist } from "../../types/Artist";
+import { Album } from "../../types/Album";
+import { CardProp } from "./PlayerCardContainer";
 
-const PlayerCard = () => {
+interface PlayerCardProps {
+  data: CardProp;
+  name?: string;
+}
+const PlayerCard: React.FC<PlayerCardProps> = ({ data, name }) => {
   return (
-    <a href="#">
-      <Card>
+    <Link to={`${data.type}/${data.id}`}>
+      <Card className="h-100">
         <Card.Img
           variant="top"
-          src="https://i.scdn.co/image/ab67656300005f1f2c97be99a6def3cda2ed44e2"
+          src={data.picture_medium || data.cover_medium}
         />
         <Card.Body className="p-0">
-          <Card.Title>GNIEW</Card.Title>
-          <Card.Text>O.S.T.R.</Card.Text>
+          <Card.Title>{data.name || data.title}</Card.Title>
+          <Card.Text>{data.type}</Card.Text>
         </Card.Body>
       </Card>
-    </a>
+    </Link>
   );
 };
 

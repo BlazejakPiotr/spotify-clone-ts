@@ -7,20 +7,25 @@ import {
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 const PlayerSidebar = () => {
   return (
     <div className="sidebar-nav d-flex flex-column justify-content-between">
       <div>
-        <img
-          src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
-          alt="logo"
-          className="spotify-logo"
-        />
-        <button>
-          <FontAwesomeIcon icon={faHome} />
-          Home
-        </button>
+        <Link to=" ">
+          <img
+            src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_RGB_White.png"
+            alt="logo"
+            className="spotify-logo mb-4"
+          />
+        </Link>
+        <Link to=" ">
+          <button>
+            <FontAwesomeIcon icon={faHome} />
+            Home
+          </button>
+        </Link>
         <button>
           <FontAwesomeIcon icon={faSearch} />
           Search

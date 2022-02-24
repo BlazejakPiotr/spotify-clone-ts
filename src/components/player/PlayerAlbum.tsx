@@ -5,8 +5,7 @@ import {
   faPlayCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Col, Container, Row } from "react-bootstrap";
-import PlayerCardContainer from "./PlayerCardContainer";
+import { Container } from "react-bootstrap";
 
 const PlayerAlbum = () => {
   return (
@@ -52,33 +51,15 @@ const PlayerAlbum = () => {
           </div>
         </div>
         <hr className="my-3" />
-        <SongItem />
-        <SongItem />
-        <SongItem />
-        <SongItem />
-        <SongItem />
       </div>
       <div className="my-4 album-credits">
         <p>© 2022 Asfalt Records</p>
         <p>℗ 2022 Asfalt Records</p>
       </div>
 
-      <PlayerCardContainer />
+      {/* <PlayerCardContainer /> */}
     </Container>
   );
 };
 
 export default PlayerAlbum;
-
-export const SongItem = () => {
-  return (
-    <div className="song-item">
-      <div>1</div>
-      <div className="w-75">
-        <h6>Preambuła</h6>
-        <p>O.S.T.R.</p>
-      </div>
-      <div>2:21</div>
-    </div>
-  );
-};

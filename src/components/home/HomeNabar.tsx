@@ -1,4 +1,5 @@
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const HomeNavbar = () => {
   return (
@@ -15,12 +16,23 @@ const HomeNavbar = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mx-auto"></Nav>
           <Nav>
-            <Nav.Link href="#">Premium</Nav.Link>
-            <Nav.Link href="#">Support</Nav.Link>
-            <Nav.Link href="#">Download</Nav.Link>
+            <Nav.Link>
+              <Link to="/login">Premium </Link>
+            </Nav.Link>
+
+            <Nav.Link>
+              <Link to="/login">Support</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/login">Download</Link>
+            </Nav.Link>
             <p style={{ padding: "28px 17px", marginBottom: "0px" }}>|</p>
-            <Nav.Link href="#">Sign up</Nav.Link>
-            <Nav.Link href="#">Log in</Nav.Link>
+            <Nav.Link>
+              <Link to="/login">Sign up</Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/login">Log in</Link>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

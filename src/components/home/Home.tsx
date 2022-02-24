@@ -8,6 +8,7 @@ import {
 
 import HomeNavbar from "./HomeNabar";
 import "./home.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -24,7 +25,9 @@ const Home = () => {
               <p className="mb-5">
                 Milions of songs and podcasts. No credit card needed.
               </p>
-              <button className="home-btn">GET SPOTIFY FREE</button>
+              <Link to="/login">
+                <button className="home-btn">GET SPOTIFY FREE</button>
+              </Link>
             </Col>
           </Row>
         </Container>

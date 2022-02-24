@@ -11,6 +11,7 @@ import {
   FooterSocials,
 } from "../footer/Footer";
 import PlayerArtist from "./PlayerArtist";
+import { Route, Routes } from "react-router-dom";
 
 const PlayerApp = () => {
   return (
@@ -23,9 +24,12 @@ const PlayerApp = () => {
           <Col className="p-0 content-wrapper">
             <PlayerTopNav />
             <div className=" player-container">
-              {/* <PlayerHome /> */}
-              {/* <PlayerAlbum /> */}
-              <PlayerArtist />
+              <Routes>
+                <Route path="/" element={<PlayerHome />} />
+                <Route path="album/:albumID" element={<PlayerAlbum />} />
+                <Route path="artist/:artistID" element={<PlayerArtist />} />
+                <Route path="radio/:radioID" element={<PlayerAlbum />} />
+              </Routes>
             </div>
 
             <footer>

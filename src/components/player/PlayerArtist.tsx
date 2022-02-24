@@ -1,26 +1,69 @@
-import { Col, Container, Row } from "react-bootstrap";
-import {
-  faClock,
-  faEllipsisH,
-  faHeart,
-  faPlayCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import { Col, Container } from "react-bootstrap";
+import { faEllipsisH, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SongItem } from "./PlayerAlbum";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import {
+  getAlbumList,
+  getArtist,
+  getRelatedToArtist,
+  getTracklist,
+  setSelectedSong,
+} from "../../actions";
+import { AppState } from "../../store";
+import PlayerSongItem from "./PlayerSongItem";
+import { Track } from "../../types/Track";
 import PlayerCardContainer from "./PlayerCardContainer";
+import { Artist } from "../../types/Artist";
+import { Album } from "../../types/Album";
+import { Dispatch } from "redux";
 
 const PlayerArtist = () => {
+  const dispatch = useDispatch();
+  const artist: Artist = useSelector(
+    (state: AppState) => state.player.data.artist
+  );
+  const tracklist: Track[] = useSelector(
+    (state: AppState) => state.player.data.tracklist.data
+  );
+  const albums = useSelector(
+    (state: AppState) => state.player.data.albums.data
+  );
+  const related = useSelector(
+    (state: AppState) => state.player.data.related.data
+  );
+
+  let { artistID } = useParams();
+
+  useEffect(() => {
+    dispatch(getArtist(artistID as string));
+  }, []);
+
+  useEffect(() => {
+    dispatch(getTracklist(artistID as string));
+  }, []);
+
+  useEffect(() => {
+    dispatch(getAlbumList(artistID as string));
+  }, []);
+
+  useEffect(() => {
+    dispatch(getRelatedToArtist(artistID as string));
+  }, []);
+
   return (
     <Container fluid className="p-0">
       <div className="artist-photo-container">
         <div
           style={{
-            backgroundImage: `url("https://e-cdns-images.dzcdn.net/images/artist/a7a67691dd35f83ca6fe0a4bd54f8c0d/1000x1000-000000-80-0-0.jpg")`,
+            backgroundImage: `url("${artist.picture_xl!}")`,
           }}
         >
           <div className="artist-photo-gradient">
             <div>
-              <h1>O.S.T.R.</h1>
+              <h1>{artist.name}</h1>
+              <p>Artist has {artist.nb_fan} fans</p>
             </div>
           </div>
         </div>
@@ -28,22 +71,21 @@ const PlayerArtist = () => {
       <div className="p-4">
         <div className="py-3 d-flex align-items-center">
           <FontAwesomeIcon icon={faPlayCircle} size="4x" color="#1DB954" />
-          <button className="mx-5 follow-btn">FOLLOW</button>{" "}
+          <button className="mx-5 follow-btn">FOLLOW</button>
           <FontAwesomeIcon icon={faEllipsisH} size="2x" color="#aaaaaa" />
         </div>
-        <h4>Popular</h4>
+        <h4 style={{ fontWeight: "700" }}>Popular</h4>
         <Col xs={10}>
-          <div className="album-songs mb-5">
-            <SongItem />
-            <SongItem />
-            <SongItem />
-            <SongItem />
-            <SongItem />
+          <div className="album-songs mb-2">
+            {tracklist?.slice(0, 10).map((song: Track, index: number) => (
+              <PlayerSongItem key={song.id} data={song} index={index} />
+            ))}
           </div>
         </Col>
-        <PlayerCardContainer />
-        <PlayerCardContainer />
-        <PlayerCardContainer />
+      </div>
+      <div className="px-4">
+        <PlayerCardContainer title="Albums" data={albums} />
+        <PlayerCardContainer title="Related artists" data={related} />
       </div>
     </Container>
   );

@@ -3,11 +3,14 @@ footer ul {
   display: flex;
   list-style-type: none;
   font-size: 0.7rem;
-  color: #919496;
 }
 
 footer ul li {
   margin-right: 24px;
+}
+
+footer ul li a {
+  color: #919496 !important;
 }
 
 footer h6 {
@@ -25,6 +28,10 @@ footer h6 {
   background-color: #313131;
   color: #fff;
   font-size: 1.5rem !important;
+}
+
+footer a {
+  color: #fff;
 }
 
 footer a:hover,

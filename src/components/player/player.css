@@ -1,6 +1,6 @@
 body {
   background-color: rgb(0, 0, 0) !important;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .content-wrapper {
@@ -49,6 +49,7 @@ body {
   align-items: center;
   display: flex;
   height: 40px;
+  width: 100%;
   text-align: left;
   font-size: 0.9rem;
   font-weight: 600;
@@ -63,7 +64,6 @@ body {
 }
 
 .spotify-logo {
-  margin-bottom: 24px;
   max-width: 131px;
 }
 
@@ -140,7 +140,7 @@ body {
 .player-bar-volume {
   width: 30%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .top-navbar {
@@ -212,18 +212,21 @@ body {
 }
 
 .card img {
+  max-width: 250px;
   border-radius: 4px;
 }
 
 .card-title {
   margin-top: 16px;
-  font-size: 0.9rem;
+  margin-bottom: 0px;
+  font-size: 0.95rem;
+  font-weight: 700;
 }
 
 .card-text {
   margin-bottom: 0.5rem;
   color: #aaaaaa;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
 }
 
 .card-container-heading {
@@ -243,7 +246,7 @@ body {
   margin-left: 24px;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .album-info h1 {
@@ -288,8 +291,13 @@ body {
   padding: 0px 16px;
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 16px;
   color: #aaaaaa;
+}
+
+.album-songs > div > div > img {
+  width: 36px;
+  height: 36px;
 }
 
 .album-songs h6 {
@@ -304,6 +312,12 @@ body {
 
 .album-songs > .song-item {
   height: 56px;
+}
+.song-item > div:first-child {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  width: 24px;
 }
 
 .album-songs > div > div:last-child {
@@ -352,7 +366,7 @@ body {
 }
 
 .artist-photo-container div {
-  padding: 50px 24px;
+  padding: 18px;
   position: absolute;
   bottom: 0;
   color: #fff;
@@ -361,6 +375,19 @@ body {
 .artist-photo-container h1 {
   font-size: 6rem;
   font-weight: 700;
+}
+
+.small-card-container {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.small-card-container img {
+  max-width: 80px;
+  max-height: 80px;
 }
 
 .follow-btn {
