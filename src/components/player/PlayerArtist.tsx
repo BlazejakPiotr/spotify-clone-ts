@@ -3,30 +3,55 @@ import { faEllipsisH, faPlayCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
-import { getArtist, getTracklist } from "../../actions";
+import React, { useEffect, useState } from "react";
+import {
+  getAlbumList,
+  getArtist,
+  getRelatedToArtist,
+  getTracklist,
+  setSelectedSong,
+} from "../../actions";
 import { AppState } from "../../store";
 import PlayerSongItem from "./PlayerSongItem";
 import { Track } from "../../types/Track";
 import PlayerCardContainer from "./PlayerCardContainer";
+import { Artist } from "../../types/Artist";
+import { Album } from "../../types/Album";
+import { Dispatch } from "redux";
 
 const PlayerArtist = () => {
   const dispatch = useDispatch();
-  const artist = useSelector((state: AppState) => state.player.data.artist);
-  const tracklist = useSelector(
-    (state: AppState) => state.player.data.tracklist
+  const artist: Artist = useSelector(
+    (state: AppState) => state.player.data.artist
   );
+  const tracklist: Track[] = useSelector(
+    (state: AppState) => state.player.data.tracklist.data
+  );
+  const albums = useSelector(
+    (state: AppState) => state.player.data.albums.data
+  );
+  const related = useSelector(
+    (state: AppState) => state.player.data.related.data
+  );
+
   let { artistID } = useParams();
 
   useEffect(() => {
     dispatch(getArtist(artistID as string));
-  }, [artist.error!]);
+  }, []);
 
   useEffect(() => {
     dispatch(getTracklist(artistID as string));
-  }, [tracklist.error!]);
+  }, []);
 
-  const [data, setData] = useState(tracklist.data!);
+  useEffect(() => {
+    dispatch(getAlbumList(artistID as string));
+  }, []);
+
+  useEffect(() => {
+    dispatch(getRelatedToArtist(artistID as string));
+  }, []);
+
   return (
     <Container fluid className="p-0">
       <div className="artist-photo-container">
@@ -51,15 +76,16 @@ const PlayerArtist = () => {
         </div>
         <h4 style={{ fontWeight: "700" }}>Popular</h4>
         <Col xs={10}>
-          <div className="album-songs mb-5">
-            {data.slice(0, 9).map((song: Track, index: number) => (
+          <div className="album-songs mb-2">
+            {tracklist?.slice(0, 10).map((song: Track, index: number) => (
               <PlayerSongItem key={song.id} data={song} index={index} />
             ))}
           </div>
         </Col>
       </div>
-      <div>
-        <PlayerCardContainer title="Albums" />
+      <div className="px-4">
+        <PlayerCardContainer title="Albums" data={albums} />
+        <PlayerCardContainer title="Related artists" data={related} />
       </div>
     </Container>
   );

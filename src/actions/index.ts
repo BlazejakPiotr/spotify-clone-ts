@@ -1,6 +1,10 @@
 import { Dispatch } from "redux";
+import { Album } from "../types/Album";
+import { Artist } from "../types/Artist";
+import { Radio } from "../types/Radio";
 import { Track } from "../types/Track";
 
+const proxyGate: string = process.env.REACT_APP_proxyGate as string;
 const apiKey: string = process.env.REACT_APP_apiKey as string;
 const apiHost: string = process.env.REACT_APP_apiHost as string;
 
@@ -8,14 +12,14 @@ export const getTopRadioPlaylists = () => {
   return async (dispatch: Dispatch) => {
     try {
       let response = await fetch(
-        "https://deezerdevs-deezer.p.rapidapi.com/radio/top",
+        `${proxyGate}https://api.deezer.com/radio/top`,
         {
           method: "GET",
           headers: { "x-rapidapi-host": apiHost, "x-rapidapi-key": apiKey },
         }
       );
       if (response.ok) {
-        const radios = await response.json();
+        const radios: Radio[] = await response.json();
         dispatch({
           type: "GET_RADIOS",
           payload: radios,
@@ -33,16 +37,20 @@ export const getArtist = (artistID: string) => {
   return async (dispatch: Dispatch) => {
     try {
       let response = await fetch(
-        `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistID}`,
+        `${proxyGate}https://api.deezer.com/artist/${artistID}`,
         {
           method: "GET",
           headers: { "x-rapidapi-host": apiHost, "x-rapidapi-key": apiKey },
         }
       );
       if (response.ok) {
-        const artist = await response.json();
+        const artist: Artist = await response.json();
         dispatch({
           type: "GET_ARTIST",
+          payload: artist,
+        });
+        dispatch({
+          type: "SET_RECENTLY_VIEWED",
           payload: artist,
         });
       } else {
@@ -58,21 +66,18 @@ export const getRelatedToArtist = (artistID: string) => {
   return async (dispatch: Dispatch) => {
     try {
       let response = await fetch(
-        `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistID}/related`,
+        `${proxyGate}https://api.deezer.com/artist/${artistID}/related`,
         {
           method: "GET",
-          headers: { "x-rapidapi-host": apiHost, "x-rapidapi-key": apiKey },
         }
       );
-      if (response.ok) {
-        const relatedArtists = await response.json();
-        dispatch({
-          type: "GET_RELATED_ARTISTS",
-          payload: relatedArtists,
-        });
-      } else {
-        console.log("Something went wrong");
-      }
+
+      const relatedArtists: Artist[] = await response.json();
+
+      dispatch({
+        type: "GET_RELATED_ARTISTS",
+        payload: relatedArtists,
+      });
     } catch (error) {
       console.log(error);
     }
@@ -83,7 +88,7 @@ export const getTracklist = (artistID: string) => {
   return async (dispatch: Dispatch) => {
     try {
       let response = await fetch(
-        `https://deezerdevs-deezer.p.rapidapi.com/artist/${artistID}/top?limit=50`,
+        `${proxyGate}https://api.deezer.com/artist/${artistID}/top?limit=50`,
         {
           method: "GET",
           headers: { "x-rapidapi-host": apiHost, "x-rapidapi-key": apiKey },
@@ -103,3 +108,33 @@ export const getTracklist = (artistID: string) => {
     }
   };
 };
+
+export const getAlbumList = (artistID: string) => {
+  return async (dispatch: Dispatch) => {
+    try {
+      let response = await fetch(
+        `${proxyGate}https://api.deezer.com/artist/${artistID}/albums`,
+        {
+          method: "GET",
+          headers: { "x-rapidapi-host": apiHost, "x-rapidapi-key": apiKey },
+        }
+      );
+      if (response.ok) {
+        const albums: Album[] = await response.json();
+        dispatch({
+          type: "GET_ALBUMS",
+          payload: albums,
+        });
+      } else {
+        console.log("Something went wrong");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const setSelectedSong = (song: Track) => ({
+  type: "SET_SELECTED_SONG",
+  payload: song,
+});

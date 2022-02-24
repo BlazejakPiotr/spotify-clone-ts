@@ -9,11 +9,13 @@ const composeEnhancers =
 export const initialState = {
   player: {
     data: {
+      albums: [],
       artist: {},
       radios: [],
       related: [],
       tracklist: [],
     },
+    selectedSong: null,
     error: false,
     loading: false,
   },

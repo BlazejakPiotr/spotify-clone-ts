@@ -313,6 +313,12 @@ body {
 .album-songs > .song-item {
   height: 56px;
 }
+.song-item > div:first-child {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  width: 24px;
+}
 
 .album-songs > div > div:last-child {
   width: 20%;
@@ -370,6 +376,7 @@ body {
   font-size: 6rem;
   font-weight: 700;
 }
+
 .small-card-container {
   display: flex;
   align-items: center;

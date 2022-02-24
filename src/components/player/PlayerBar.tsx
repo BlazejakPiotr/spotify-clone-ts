@@ -5,36 +5,60 @@ import {
   faForward,
   faHeart,
   faLaptopHouse,
+  faPauseCircle,
   faPlayCircle,
   faRandom,
   faRedo,
   faVolumeUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect, useState } from "react";
 import { ProgressBar } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { AppState } from "../../store";
+import { Track } from "../../types/Track";
 
-const PlayerBar = () => {
+const PlayerBar: React.FC = () => {
+  const selectedSong: Track = useSelector(
+    (state: AppState) => state.player.selectedSong
+  );
+
+  let [audio] = useState<HTMLAudioElement>(new Audio(selectedSong?.preview));
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const handlePlayBtn = () => setIsPlaying(!isPlaying);
+
+  useEffect(() => {
+    isPlaying ? audio.play() : audio.pause();
+  }, [isPlaying]);
+
+  useEffect(() => {
+    audio.pause();
+    console.log(audio);
+    audio = new Audio(selectedSong?.preview);
+    audio.play();
+  }, [selectedSong]);
   return (
     <div className="playerbar-container">
       <div className="playerbar-song">
-        <img
-          src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/artistic-album-cover-design-template-d12ef0296af80b58363dc0deef077ecc_screen.jpg?ts=1561488440"
-          alt=""
-        />
-        <div className="d-flex flex-column justify-content-center">
-          <h6>Pokaż mi hajs</h6>
-          <p className="text-muted" style={{ fontSize: "0.7rem" }}>
-            Donguralesko, Shellerini, Tailor Cut, Sydoz, DJ Flip
-          </p>
-        </div>
-        <div className="d-flex align-items-center">
-          <button>
-            <FontAwesomeIcon icon={faHeart} />
-          </button>
-          <button>
-            <FontAwesomeIcon icon={faExpand} />
-          </button>
-        </div>
+        {selectedSong && (
+          <>
+            <img src={selectedSong.album?.cover_small} alt="" />
+            <div className="d-flex flex-column justify-content-center">
+              <h6>{selectedSong.title_short}</h6>
+              <p className="text-muted" style={{ fontSize: "0.7rem" }}>
+                {selectedSong.artist.name}
+              </p>
+            </div>
+            <div className="d-flex align-items-center">
+              <button>
+                <FontAwesomeIcon icon={faHeart} />
+              </button>
+              <button>
+                <FontAwesomeIcon icon={faExpand} />
+              </button>
+            </div>
+          </>
+        )}
       </div>
 
       <div className="playerbar-controls">
@@ -45,9 +69,18 @@ const PlayerBar = () => {
           <button>
             <FontAwesomeIcon icon={faBackward} />
           </button>
-          <button style={{ width: "48px", color: "#fff" }}>
-            <FontAwesomeIcon icon={faPlayCircle} size="2x" />
+
+          <button
+            style={{ width: "48px", color: "#fff" }}
+            onClick={handlePlayBtn}
+          >
+            {isPlaying ? (
+              <FontAwesomeIcon icon={faPauseCircle} size="2x" />
+            ) : (
+              <FontAwesomeIcon icon={faPlayCircle} size="2x" />
+            )}
           </button>
+
           <button>
             <FontAwesomeIcon icon={faForward} />
           </button>

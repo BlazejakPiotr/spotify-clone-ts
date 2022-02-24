@@ -1,6 +1,6 @@
 export interface reduxStore {
   player: {
-    recentlyPlayed: [];
+    recent: [];
     radio: [];
     generes: [];
     error: false;

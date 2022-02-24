@@ -35,6 +35,27 @@ const playerReducer = (state = initialState.player, action: AnyAction) => {
           tracklist: action.payload,
         },
       };
+    case "GET_ALBUMS":
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          albums: action.payload,
+        },
+      };
+    case "SET_RECENTLY_VIEWED":
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          recent: [action.payload],
+        },
+      };
+    case "SET_SELECTED_SONG":
+      return {
+        ...state,
+        selectedSong: action.payload,
+      };
     default:
       return state;
   }

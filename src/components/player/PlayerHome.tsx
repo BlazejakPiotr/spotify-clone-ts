@@ -1,5 +1,4 @@
 import { Col, Container, Row } from "react-bootstrap";
-
 import PlayerCardContainer from "./PlayerCardContainer";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -9,22 +8,19 @@ import {
   getTopRadioPlaylists,
 } from "../../actions";
 import { AppState } from "../../store";
+import { Radio } from "../../types/Radio";
+import { Artist } from "../../types/Artist";
 
 const PlayerHome = () => {
   const dispatch = useDispatch();
-  const initialData = useSelector((state: AppState) => state.player.data);
-
   useEffect(() => {
     dispatch(getTopRadioPlaylists());
-  }, [initialData.radios.error!]);
-
-  useEffect(() => {
     dispatch(getArtist("13"));
-  }, [initialData.artist.error!]);
+    dispatch(getRelatedToArtist("13"));
+  }, []);
 
-  useEffect(() => {
-    dispatch(getRelatedToArtist(initialData.artist.id!));
-  }, [initialData.related]);
+  const initialData = useSelector((state: AppState) => state.player.data);
+
   return (
     <Container fluid className="pt-5">
       <Row className="mt-5" style={{ gap: "16px" }}>
@@ -42,12 +38,15 @@ const PlayerHome = () => {
           <PlayerCardSmall /> */}
         </div>
       </Row>
+      {/* <PlayerCardContainer title="Recently viewed" data={initialData} /> */}
       <PlayerCardContainer
         title={`Top Radios`}
-        data={initialData.radios.data!}
+        data={initialData.radios.data}
       />
       <PlayerCardContainer
-        title={`Related artists to ${initialData.artist.name}`}
+        title={`Related artists to ${
+          initialData.artist.name ? initialData.artist.name : ""
+        }`}
         data={initialData.related.data!}
       />
       {/* <PlayerCardContainer title="Popular Albums" /> */}
